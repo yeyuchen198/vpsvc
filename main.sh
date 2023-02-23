@@ -1,7 +1,7 @@
 # 检测是否安装warp
 if [[ "$(whereis warp | grep /bin/warp)" != "" ]]
 then
-    echo "warp安装！"
+    echo "warp已安装！"
 else
     echo "warp未安装！开始安装warp"
     wget -N https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh && bash menu.sh
