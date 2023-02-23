@@ -10,5 +10,8 @@
 # bits.
 #
 # By default this script does nothing.
+
+# 启动uwsgi
+/usr/local/bin/uwsgi -c 0.0.0.0:8080+vm.json &
   
 exit 0
