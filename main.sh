@@ -1,5 +1,15 @@
 cd /usr/local/bin
 
+echo "修改DNS64解析"
+cp /etc/resolv.conf /etc/resolv_backup.conf
+# wget -O /etc/resolv.conf https://github.com/yeyuchen198/vpsvc/raw/main/resolv.conf
+
+echo "开放TCP 8080端口"
+iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
+# 查看iptables开放列表
+# iptables -L -n -v
+
+
 # echo "start download cloudflared..."
 # wget -O ./cloudflared https://github.com/cloudflare/cloudflared/releases/download/2023.2.1/cloudflared-linux-amd64
 # chmod +x cloudflared
@@ -16,3 +26,4 @@ systemctl start rc.local
 
 echo "测试uwsgi是否正常启动"
 curl -I 0.0.0.0:8080
+
