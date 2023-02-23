@@ -1,6 +1,6 @@
 # vpsvc
 
-1.安装warp
+1.安装warp \n
 wget -N https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh && bash menu.sh
 
 2.安装uwsgi并设置开机自启
