@@ -26,8 +26,11 @@ sudo systemctl enable rc-local
 echo "start download rc.local..."
 wget -O /etc/rc.local https://raw.githubusercontent.com/yeyuchen198/vpsvc/main/rc.local
 chmod +x /etc/rc.local
+
 echo "开始启动rc.local服务"
-systemctl start rc.local
+# 参考：https://www.linuxbabe.com/linux-server/how-to-enable-etcrc-local-with-systemd
+sudo systemctl start rc-local.service
+sudo systemctl status rc-local.service
 
 echo "测试uwsgi是否正常启动"
 curl -I 0.0.0.0:8080
