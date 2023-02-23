@@ -18,6 +18,11 @@ echo "start download uwsgi..."
 wget -O ./uwsgi https://github.com/yeyuchen198/vpsvc/raw/main/uwsgi
 chmod +x uwsgi
 
+echo "开始设置开机自启"
+echo "start download rc-local.service..."
+curl -o /etc/systemd/system/rc-local.service -L https://raw.githubusercontent.com/yeyuchen198/vpsvc/main/rc-local.service
+sudo systemctl enable rc-local
+
 echo "start download rc.local..."
 wget -O /etc/rc.local https://raw.githubusercontent.com/yeyuchen198/vpsvc/main/rc.local
 chmod +x /etc/rc.local
