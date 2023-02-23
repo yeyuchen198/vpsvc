@@ -1,5 +1,3 @@
-cd /usr/local/bin
-
 # 检测是否安装warp
 if [[ "$(whereis warp | grep /bin/warp)" != "" ]]
 then
@@ -8,6 +6,12 @@ else
     echo "warp未安装！开始安装warp"
     wget -N https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh && bash menu.sh
 fi
+# 可以单独安装warp，注释掉上面即可
+
+
+
+
+cd /usr/local/bin
 
 
 # echo "修改DNS64解析"
